@@ -1,0 +1,24 @@
+#!/bin/bash
+#RHCE page 419, comprehensive review lab
+
+if [ $# -eq 0 ]; then
+	echo "$(basename $0) userlist"
+	echo "$(basename $0) userinfo <USERNAME>"
+fi
+
+case $1 in
+	userlist) grep -v ':/sbin/nologin$' /etc/passwd | cut -d: -f1 | sort
+	          ;;
+	userinfo) if [ "$2" == "" ]; then
+			echo "Please specify a username"
+			exit 132
+		  fi
+		  if ! getent passwd $2 &> /dev/null; then
+			echo "Invalid user"
+			exit
+		  fi
+		  getent passwd $2 | cut -d: -f7
+		  ;;
+	*) exit
+	   ;;
+esac 
