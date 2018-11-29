@@ -4,4 +4,4 @@
 * These are my personal notes which helped me to pass the exam
 
 # Contributors
-Lucian Maly <<lucian@redhat.com>> ~~<<lucian@redhat.com>>~~ ~~<<lucian.maly@oracle.com>>~~
+Lucian Maly <<lucian@redhat.com>> ~~<<lucian.maly@oracle.com>>~~
